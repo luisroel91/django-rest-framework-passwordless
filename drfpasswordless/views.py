@@ -78,6 +78,10 @@ class ObtainEmailCallbackToken(AbstractBaseObtainCallbackToken):
 
 
 class ObtainMobileCallbackToken(AbstractBaseObtainCallbackToken):
+    """
+    post:
+    Send PIN to mobile number
+    """
     permission_classes = (AllowAny,)
     serializer_class = MobileAuthSerializer
     success_response = "We texted you a login code."
@@ -90,6 +94,10 @@ class ObtainMobileCallbackToken(AbstractBaseObtainCallbackToken):
 
 
 class ObtainEmailVerificationCallbackToken(AbstractBaseObtainCallbackToken):
+    """
+    post:
+    Send PIN to email
+    """
     permission_classes = (IsAuthenticated,)
     serializer_class = EmailVerificationSerializer
     success_response = "A verification token has been sent to your email."
